@@ -136,12 +136,12 @@
     }
 
     function updateVisibleContent(event, eventsContent) {
-      const eventDate = event.data('date');
+      const eventDate = event.data('project');
       const visibleContent = eventsContent.find('.selected');
-      const selectedContent = eventsContent.find(`[data-date="${eventDate}"]`);
+      const selectedContent = eventsContent.find(`[data-project="${eventDate}"]`);
       const selectedContentHeight = selectedContent.height();
-      eventsContent.find('li').fadeOut(500).delay(900);
-      selectedContent.fadeIn(500);
+      eventsContent.find('li').fadeOut(900).delay(400);
+      selectedContent.fadeIn(900);
       eventsContent.css('height', `${selectedContentHeight}px`);
     }
 
