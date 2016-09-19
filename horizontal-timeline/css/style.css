@@ -55,7 +55,7 @@ Main Components
   position: relative;
   height: 100%;
   margin: 0 40px;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 .cd-horizontal-timeline .events-wrapper::after, .cd-horizontal-timeline .events-wrapper::before {
   /* these are used to create a shadow effect at the sides of the timeline */
@@ -138,7 +138,7 @@ Main Components
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
-  bottom: -5px;
+  bottom: -6px;
   height: 12px;
   width: 12px;
   border-radius: 50%;
@@ -240,7 +240,7 @@ Main Components
 .cd-horizontal-timeline .events-content {
   position: relative;
   width: 100%;
-  margin: 2em 0;
+  margin: 15px 0;
   overflow: hidden;
   -webkit-transition: height 0.4s;
   -moz-transition: height 0.4s;
@@ -291,7 +291,7 @@ Main Components
 .cd-horizontal-timeline .events-content li img{
   width: 100%;
 }
-@media only screen and (min-width: 768px) {
+/*@media only screen and (min-width: 768px) {
   .cd-horizontal-timeline .events-content h2 {
     font-size: 7rem;
   }
@@ -301,5 +301,61 @@ Main Components
   .cd-horizontal-timeline .events-content p {
     font-size: 1.8rem;
   }
+}*/
+
+.cd-horizontal-timeline .events .pop-contents{
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    text-align: center;
+    font-size: 1.3rem;
+    padding-bottom: 15px;
+    color: #383838;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+    margin-bottom: 45px;
+    display: none;
 }
 
+.pop-contents>.arrow, .pop-contents>.arrow:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+
+.pop-contents>.arrow {
+    border-width: 11px;
+}
+
+.pop-contents>.arrow:after {
+    content: "";
+    border-width: 10px;
+    bottom: 1px;
+    margin-left: -10px;
+    content: " ";
+    border-top-color: #fff;
+    border-bottom-width: 0;
+}
+
+.pop-contents>.arrow {
+    bottom: -11px;
+    left: 50%;
+    margin-left: -11px;
+    border-top-color: #999;
+    border-top-color: rgba(0,0,0,.25);
+    border-bottom-width: 0;
+}
+
+.cd-horizontal-timeline .events li {
+  position: relative;
+}
